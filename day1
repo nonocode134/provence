@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                zoom: 14,
+                center: { lat: 43.296482, lng: 5.36978 } // Coordonnées du centre de la carte (Marseille)
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var restaurants = [
+                {
+                    name: 'Le Petit Nice',
+                    position: { lat: 43.284997, lng: 5.352064 },
+                    address: '17 Rue des Braves, 13007 Marseille'
+                },
+                {
+                    name: 'La Table Ronde',
+                    position: { lat: 43.294668, lng: 5.36984 },
+                    address: '35 Cours Honoré d\'Estienne d\'Orves, 13001 Marseille'
+                },
+                {
+                    name: 'Le Pouce',
+                    position: { lat: 43.292197, lng: 5.369426 },
+                    address: '3 Rue Fort Notre Dame, 13007 Marseille'
+                }
+            ];
+
+            restaurants.forEach(function (restaurant) {
+                var marker = new google.maps.Marker({
+                    position: restaurant.position,
+                    map: map,
+                    title: restaurant.name
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<div><strong>' + restaurant.name + '</strong><br>' + restaurant.address + '</
