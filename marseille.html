@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My French Vacation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+        }
+        h1 {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+            padding: 20px;
+        }
+        .day {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+        .day::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .day h3 {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+        .day:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .details {
+            display: none;
+            padding: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        function showDetails(id) {
+            var grid = document.getElementById('grid');
+            var details = document.getElementById(id);
+            grid.style.display = 'none';
+            details.style.display = 'block';
+        }
+
+        function hideDetails(id) {
+            var grid = document.getElementById('grid');
+            var details = document.getElementById(id);
+            grid.style.display = 'grid';
+            details.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>My French Vacation</h1>
+    <div id="grid" class="container">
+        <div class="day" onclick="showDetails('day1')" style="background-image: url('https://your-image-url-for-marseille-day-1');">
+            <h3>April 7<br>Marseille</h3>
+        </div>
+        <div class="day" onclick="showDetails('day2')" style="background-image: url('https://your-image-url-for-marseille-day-2');">
+            <h3>April 8<br>Marseille</h3>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="day1" class="details">
+        <h2>7 avril - Marseille</h2>
+<h3>Matin</h3>
+<p>
+    Arrivée à Marseille vers midi. Vous pouvez prendre un taxi ou les transports en commun pour vous rendre à votre hôtel situé près du Vieux-Port.
+</p>
+<h3>Après-midi</h3>
+<p>
+    Après vous être installés à l'hôtel, partez à la découverte du Vieux-Port et ses alentours. Vous pouvez vous promener le long du port et admirer les bateaux ou vous rendre au <a href="https://goo.gl/maps/ckBhQ2BijzT2" target="_blank">Fort Saint-Nicolas</a> pour profiter d'une vue panoramique sur la ville et la mer.
+</p>
+<p>
+    Ensuite, vous pourrez visiter le quartier du Panier, le plus ancien quartier de Marseille, où vous découvrirez des ruelles étroites, des maisons colorées et des ateliers d'artistes.
+</p>
+<h3>Soir</h3>
+<p>
+    Pour le dîner, voici quelques recommandations de restaurants à proximité du Vieux-Port :
+</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Adresse</th>
+            <th>Type de cuisine</th>
+            <th>Google Maps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Le Petit Nice</td>
+            <td>17 Rue des Braves, 13007 Marseille</td>
+            <td>Fruits de mer</td>
+            <td><a href="https://www.google.com/maps/place/Le+Petit+Nice/@43.284997,5.352064,17z/" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+        <tr>
+            <td>La Table Ronde</td>
+            <td>35 Cours Honoré d'Estienne d'Orves, 13001 Marseille</td>
+            <td>Provençale</td>
+            <td><a href="https://www.google.com/maps/place/La+Table+Ronde/@43.294668,5.36984,17z" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+        <tr>
+            <td>Le Pouce</td>
+            <td>3 Rue Fort Notre Dame, 13007 Marseille</td>
+            <td>Brasserie</td>
+            <td><a href="https://www.google.com/maps/place/Le+Pouce/@43.292197,5.369426,17z/" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+    </tbody>
+</table>
+
+        <a href="#" onclick="hideDetails('day1')" class="back-button">Back</a>
+    </div>
+
+
+
+
+
+
+    <div id="day2" class="details">
+        <h2>April 8 - Marseille</h2>
+        <p>Here is the detailed itinerary for April 8.</p>
+        <a href="#" onclick="hideDetails('day2')" class="back-button">Back</a>
+    </div>
+
+</body>
+</html>
+       
