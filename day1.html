@@ -1,46 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-    <script>
-        function initMap() {
-            var mapOptions = {
-                zoom: 14,
-                center: { lat: 43.296482, lng: 5.36978 } // Coordonnées du centre de la carte (Marseille)
-            };
-
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            var restaurants = [
-                {
-                    name: 'Le Petit Nice',
-                    position: { lat: 43.284997, lng: 5.352064 },
-                    address: '17 Rue des Braves, 13007 Marseille'
-                },
-                {
-                    name: 'La Table Ronde',
-                    position: { lat: 43.294668, lng: 5.36984 },
-                    address: '35 Cours Honoré d\'Estienne d\'Orves, 13001 Marseille'
-                },
-                {
-                    name: 'Le Pouce',
-                    position: { lat: 43.292197, lng: 5.369426 },
-                    address: '3 Rue Fort Notre Dame, 13007 Marseille'
-                }
-            ];
-
-            restaurants.forEach(function (restaurant) {
-                var marker = new google.maps.Marker({
-                    position: restaurant.position,
-                    map: map,
-                    title: restaurant.name
-                });
-
-                var infowindow = new google.maps.InfoWindow({
-                    content: '<div><strong>' + restaurant.name + '</strong><br>' + restaurant.address + '</
+<h2>7 avril - Marseille</h2>
+<h3>Matin</h3>
+<p>
+    Arrivée à Marseille vers midi. Vous pouvez prendre un taxi ou les transports en commun pour vous rendre à votre hôtel situé près du Vieux-Port.
+</p>
+<h3>Après-midi</h3>
+<p>
+    Après vous être installés à l'hôtel, partez à la découverte du Vieux-Port et ses alentours. Vous pouvez vous promener le long du port et admirer les bateaux ou vous rendre au <a href="https://goo.gl/maps/ckBhQ2BijzT2" target="_blank">Fort Saint-Nicolas</a> pour profiter d'une vue panoramique sur la ville et la mer.
+</p>
+<p>
+    Ensuite, vous pourrez visiter le quartier du Panier, le plus ancien quartier de Marseille, où vous découvrirez des ruelles étroites, des maisons colorées et des ateliers d'artistes.
+</p>
+<h3>Soir</h3>
+<p>
+    Pour le dîner, voici quelques recommandations de restaurants à proximité du Vieux-Port :
+</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Adresse</th>
+            <th>Type de cuisine</th>
+            <th>Google Maps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Le Petit Nice</td>
+            <td>17 Rue des Braves, 13007 Marseille</td>
+            <td>Fruits de mer</td>
+            <td><a href="https://goo.gl/maps/YZW9egp9mzq3yUfK8" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+        <tr>
+            <td>La Table Ronde</td>
+            <td>35 Cours Honoré d'Estienne d'Orves, 13001 Marseille</td>
+            <td>Provençale</td>
+            <td><a href="https://goo.gl/maps/s6g9P6GzU6udcH6E8" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+        <tr>
+            <td>Le Pouce</td>
+            <td>3 Rue Fort Notre Dame, 13007 Marseille</td>
+            <td>Brasserie</td>
+            <td><a href="https://goo.gl/maps/hGts7VY8W1sdSipR9" target="_blank">Voir sur Google Maps</a></td>
+        </tr>
+    </tbody>
+</table>
